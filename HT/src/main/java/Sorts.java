@@ -10,7 +10,7 @@ import java.util.*;
  * @author maris
  */
 public class Sorts {
-    //Metodo de insrtion sort
+    //Codigo proveido por Rajat Mishra https://www.geeksforgeeks.org/selection-sort/
     public void selectionSort(int data[], int na){
         int n = na;
         for (int i = 0; i<n-1;i++){
@@ -25,6 +25,7 @@ public class Sorts {
             data[i]=temp;
         }
     }
+    //metodo para imprimir la lista 
     public void toString(int data[],int na){
         int n = na;
         for(int i=0;i<n;i++){
@@ -32,6 +33,7 @@ public class Sorts {
         }
         System.out.println();
     }
+    //codigo proveido por Rajat Mishra https://www.geeksforgeeks.org/merge-sort/
     public void merge(int data[], int a, int m, int b){
         int n1= m-a+1;
         int n2 = b-m;
@@ -76,6 +78,7 @@ public class Sorts {
             merge(data,a,m,b);
         }
     }
+    //codigo proveido por Rajat Mishra https://www.geeksforgeeks.org/quick-sort/
     public int partition(int data[],int low, int high){
         int pivote=data[high];
         int i = (low-1);
@@ -99,6 +102,7 @@ public class Sorts {
             quickSort(data,pi+1,high);
         }
     }
+    //codigo proveido de Devesh Agrawal https://www.geeksforgeeks.org/radix-sort/
     public static int getMax(int data[],int n){
         int mx=data[0];
         for(int i=1;i<n;i++){
@@ -127,10 +131,23 @@ public class Sorts {
             data[i]=output[i];
         }
     }
-    public static void radixSort(int data[],int n){
+    public void radixSort(int data[],int n){
         int m= getMax(data,n);
         for(int exp=1;m/exp>0;exp *=10){
             countrSort(data, n, exp);
+        }
+    }
+    /* Codigo proveido por Rajat Mishra https://www.geeksforgeeks.org/bubble-sort/ */
+    public void bubbleSort(int data[], int na){
+        int n = na;
+        for(int i = 0; i<n-1;i++){
+            for(int j = 0; j<n-i+1;j++){
+                if(data[j]>data[j+1]){
+                    int temp = data[j];
+                    data[j]=data[j+1];
+                    data[j+1]=temp;
+                }
+            }
         }
     }
     
