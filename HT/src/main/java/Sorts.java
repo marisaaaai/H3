@@ -67,12 +67,35 @@ public class Sorts {
         }
         
     }
-    public void sort(int data[],int a,int b){
+    public void mergeSort(int data[],int a,int b){
         if(a<b){
             int m=(a+b)/2;
-            sort(data,a,m);
-            sort(data,m+1,b);
+            mergeSort(data,a,m);
+            mergeSort(data,m+1,b);
             merge(data,a,m,b);
+        }
+    }
+    public int partition(int data[],int low, int high){
+        int pivote=data[high];
+        int i = (low-1);
+        for(int j=low;j<high;j++){
+            if(data[j]<pivote){
+                i++;
+                int temp = data[i];
+                data[i]=data[j];
+                data[j]=temp;
+            }
+        }
+        int temp = data[i+1];
+        data[i+1]=data[high];
+        data[high]=temp;
+        return i + 1;
+    }
+    public void quickSort(int data[],int low,int high){
+        if(low<high){
+            int pi = partition(data,low,high);
+            quickSort(data,low,pi-1);
+            quickSort(data,pi+1,high);
         }
     }
     
