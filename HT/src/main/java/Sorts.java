@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import java.io.*;
+import java.util.*;
 /**
  *
  * @author maris
@@ -96,6 +97,40 @@ public class Sorts {
             int pi = partition(data,low,high);
             quickSort(data,low,pi-1);
             quickSort(data,pi+1,high);
+        }
+    }
+    public static int getMax(int data[],int n){
+        int mx=data[0];
+        for(int i=1;i<n;i++){
+            if(data[i]>mx){
+                mx=data[i];                
+            }
+        }
+        return mx;
+    }
+    public static void countrSort(int data[],int n,int exp){
+        int output[]= new int[n];
+        int i;
+        int count[]= new int[10];
+        Arrays.fill(count,0);
+        for(i=0;i<n;i++){
+            count[(data[i]/exp)%10]++;
+        }
+        for (i=1;i<10;i++){
+            count[i]  += count[i-1];
+        }
+        for (i=n-1;i>=0;i--){
+            output[count[(data[i]/exp)%10]-1]=data[i];
+            count[(data[i]/exp)%10]--;
+        }
+        for(i=0;i<n;i++){
+            data[i]=output[i];
+        }
+    }
+    public static void radixSort(int data[],int n){
+        int m= getMax(data,n);
+        for(int exp=1;m/exp>0;exp *=10){
+            countrSort(data, n, exp);
         }
     }
     
