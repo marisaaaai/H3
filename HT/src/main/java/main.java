@@ -56,6 +56,10 @@ public class main {
                 sorts.radixSort(numeros,10);
                 sorts.toString(numeros,10);
                 break;
+            case 5:
+                sorts.bubbleSort(numeros,10);
+                sorts.toString(numeros,10);
+                break;
         }
     }    
 }
