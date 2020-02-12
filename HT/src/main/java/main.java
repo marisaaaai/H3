@@ -40,16 +40,20 @@ public class main {
         int op = scan.nextInt();
         Sorts sorts = new Sorts();
         switch(op){
-            case 1:
+            case 1://Codigo proveido por Rajat Mishra https://www.geeksforgeeks.org/selection-sort/
                 sorts.selectionSort(numeros, 10);
                 sorts.toString(numeros,10);
                 break;
-            case 2:
+            case 2://codigo proveido por Rajat Mishra https://www.geeksforgeeks.org/merge-sort/
                sorts.mergeSort(numeros,0,10);
                sorts.toString(numeros,10);
                break;
-            case 3:
+            case 3://codigo proveido por Rajat Mishra https://www.geeksforgeeks.org/quick-sort/
                 sorts.quickSort(numeros,0,9);
+                sorts.toString(numeros,10);
+                break;
+            case 4://codigo proveido de Devesh Agrawal https://www.geeksforgeeks.org/radix-sort/ 
+                sorts.radixSort(numeros,10);
                 sorts.toString(numeros,10);
                 break;
         }
