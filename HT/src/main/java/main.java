@@ -45,9 +45,13 @@ public class main {
                 sorts.toString(numeros,10);
                 break;
             case 2:
-               sorts.sort(numeros,0,10);
+               sorts.mergeSort(numeros,0,10);
                sorts.toString(numeros,10);
                break;
+            case 3:
+                sorts.quickSort(numeros,0,9);
+                sorts.toString(numeros,10);
+                break;
         }
     }    
 }
