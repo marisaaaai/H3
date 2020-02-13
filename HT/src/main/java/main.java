@@ -36,35 +36,36 @@ public class main {
             int entero = Integer.parseInt(numero);
             numeros[i]=entero;
         }
+        //se muestra un menu para poder sellecionar el tipo de sort que se quiere crear
         System.out.println("Sorts:\n 1 Selection Sort \n 2. Merge Sort \n 3. Quick Sort \n 4. Radix Sort \n 5. Bubble Sort ");
-        int op = scan.nextInt();
+        int op = scan.nextInt();//ingresa el valor deseado
         System.out.println();
-        Sorts sorts = new Sorts();
-        switch(op){
+        Sorts sorts = new Sorts();//se instancia la clase sorts
+        switch(op){//Por cada opcion que el pueda ingresa
             case 1://Codigo proveido por Rajat Mishra https://www.geeksforgeeks.org/selection-sort/
-                sorts.selectionSort(numeros, 10);
+                sorts.selectionSort(numeros, 10);//se usa selection sort
                 System.out.println();
-                sorts.toString(numeros,10);
+                sorts.toString(numeros,10);//se imprime el array arreglado
                 break;
             case 2://codigo proveido por Rajat Mishra https://www.geeksforgeeks.org/merge-sort/
-               sorts.mergeSort(numeros,0,10);
+               sorts.mergeSort(numeros,0,10);//se usamerge sort
                System.out.println();
-               sorts.toString(numeros,10);
+               sorts.toString(numeros,10);//se imorime el arreglo
                break;
             case 3://codigo proveido por Rajat Mishra https://www.geeksforgeeks.org/quick-sort/
-                sorts.quickSort(numeros,0,9);
+                sorts.quickSort(numeros,0,9);//se usa quicksort
                 System.out.println();
-                sorts.toString(numeros,10);
+                sorts.toString(numeros,10);//se imprime el arreglo
                 break;
             case 4://codigo proveido de Devesh Agrawal https://www.geeksforgeeks.org/radix-sort/ 
-                sorts.radixSort(numeros,10);
+                sorts.radixSort(numeros,10);//se usa radix sort
                 System.out.println();
-                sorts.toString(numeros,10);
+                sorts.toString(numeros,10);//se imprime el arreglo
                 break;
             case 5:
-                sorts.bubbleSort(numeros,10);
+                sorts.bubbleSort(numeros,10);//se usa bubble sort
                 System.out.println();
-                sorts.toString(numeros,10);
+                sorts.toString(numeros,10);//se imprime el arreglo
                 break;
         }
     }    

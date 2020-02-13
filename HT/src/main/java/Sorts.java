@@ -138,14 +138,17 @@ public class Sorts {
         }
     }
     /* Codigo proveido por Rajat Mishra https://www.geeksforgeeks.org/bubble-sort/ */
+    //@param(array de enteros, entero na) na sera cambiado cuando se quiera modificar el nmero de numeros que se quiera ordenar
     public void bubbleSort(int data[], int na){
-        int n = na;
+        int n = na;//se establece el valor de lo largo del array, en este caso el numero de numeros que queremos ordenar
+        //para i se menor que el index mayor del array
         for(int i = 0; i<n-1;i++){
+            //para j cuando j sea menor al tamaño del array menos i+1
             for(int j = 0; j<n-i+1;j++){
-                if(data[j]>data[j+1]){
-                    int temp = data[j];
-                    data[j]=data[j+1];
-                    data[j+1]=temp;
+                if(data[j]>data[j+1]){//si en el array en la posicion j es mayor que en la posicion j+1
+                    int temp = data[j];//crear variable temporal en donde se guaradara lo que tiene el array en la posicion j
+                    data[j]=data[j+1];// el dato en la posicion j del array pasa a ser el dato que esta en la posicon j+1
+                    data[j+1]=temp; //el dato en la posicion j + 1 pasar a ser la variable temporal.
                 }
             }
         }
